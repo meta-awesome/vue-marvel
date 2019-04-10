@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <h1>
-      Hello World!
-    </h1>
-
-    <template v-for="(comic, index) of comics">
-      <card v-bind:key="index" :comic="comic" />
-    </template>
+  <div class="container">
+    <div class="row">
+      <template v-for="(comic, index) of comics">
+        <div v-bind:key="index" class="form-group col-4">
+          <card :comic="comic" />
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -16,10 +16,6 @@ import Card from './Card'
 
 export default {
   name: 'HelloWorld',
-
-  props: {
-    msg: String,
-  },
 
   components: {
     Card,
